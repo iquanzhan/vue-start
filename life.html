@@ -1,62 +1,30 @@
-# vue-start
-## 项目初始化
+<!DOCTYPE html>
+<html lang="zh-CN">
 
-#### 1.初始化项目
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
 
-```
-npm init -y
-```
+<body>
 
-#### 2.安装vue
+    <div id="app">
+        {{hello}}
 
-```
-npm install vue --save
-```
-
-#### 3.创建Vue模版
-
-```
-<div id="app">
-        <h2>hello,{{name}}</h2>
+        <span v-text="text"></span>
+        <span v-html="html"></span>
     </div>
-    <script src="./node_modules/vue/dist/vue.js"></script>
+
+    <script src="./node_modules//vue/dist/vue.js"></script>
     <script>
         var app = new Vue({
             el: '#app',
             data: {
-                name: '小明'
-            }
-        });
-    </script>
-```
-
- 
-
-## Vue基本特性
-
-#### 1.数据和方法的定义
-
-```
- var doubleApp = new Vue({
-            el: '#doubleApp',
-            data: {
-                number: 0
-            },
-            methods: {
-                add:function(){
-                    this.number++;
-                }    
-            }
-        })
-```
-
-#### 2.生命周期函数
-
-```
-var app = new Vue({
-            el: '#app',
-            data: {
-                hello: '你好'
+                hello: '你好',
+                text: 'text',
+                html:'<h4>112212121</h4>'
             },
             methods: {},
             beforeCreate() {
@@ -86,13 +54,7 @@ var app = new Vue({
                 console.log("destroyed");
             }
         });
-```
+    </script>
+</body>
 
-#### 3.差值闪烁
-
-```
-<span v-text="text"></span>
-<span v-html="html"></span>
-```
-
-4.
+</html>
