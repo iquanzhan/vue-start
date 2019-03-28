@@ -29,12 +29,19 @@
     <div id="doubleApp">
         {{number}}
         <input type="number" v-model="number" />
+        <!-- v-on:click="number++" -->
+        <button  v-on:click="add">+</button>
     </div>
     <script>
         var doubleApp = new Vue({
             el: '#doubleApp',
             data: {
                 number: 0
+            },
+            methods: {
+                add:function(){
+                    this.number++;
+                }    
             }
         })
     </script>
