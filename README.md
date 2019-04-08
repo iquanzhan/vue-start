@@ -400,3 +400,39 @@ type类型，可以有：
 <introduce :name="title" /></introduce>
 ```
 
+##### 12.4 子到父的传递
+
+```
+<counter :num="num" @add="add" @decrement="decrement"></counter>
+```
+
+```
+Vue.component("counter", {
+            template: '<div><button @click="add">+</button><button @click="decrement">-</button></div>',
+            props: ['num'],
+            methods: {
+                add() {
+                    this.$emit("add");
+                },
+                decrement() {
+                    this.$emit("decrement");
+                }
+            }
+        });
+
+        var app = new Vue({
+            el: '#app',
+            data: {
+                num: 0
+            },
+            methods: {
+                add() {
+                    this.num++;
+                },
+                decrement() {
+                    this.num--;
+                }
+            }
+        });
+```
+

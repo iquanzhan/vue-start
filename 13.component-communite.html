@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>组件通信-子到父的通信</title>
+</head>
+
+<body>
+    <div id="app">
+        number:{{num}}
+
+        <counter :num="num" @add="add" @decrement="decrement"></counter>
+
+    </div>
+
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script>
+        Vue.component("counter", {
+            template: '<div><button @click="add">+</button><button @click="decrement">-</button></div>',
+            props: ['num'],
+            methods: {
+                add() {
+                    this.$emit("add");
+                },
+                decrement() {
+                    this.$emit("decrement");
+                }
+            }
+        });
+
+        var app = new Vue({
+            el: '#app',
+            data: {
+                num: 0
+            },
+            methods: {
+                add() {
+                    this.num++;
+                },
+                decrement() {
+                    this.num--;
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
