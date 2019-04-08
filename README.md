@@ -202,6 +202,8 @@ v-for="(value,key,index) in object"
 
 #### 7.v-if、v-show
 
+##### 7.1 基本使用
+
 ```
 <button v-on:click="show=!show">
 	显示
@@ -212,5 +214,40 @@ v-for="(value,key,index) in object"
 <span v-show="show">
 	文本内容
 </span>
+```
+
+##### 7.2 和v-for结合使用
+
+> v-for的优先级大于v-if的优先级
+
+```
+<li v-for="(user, index) in users" v-if="user.gender == '女'">
+       {{index + 1}}. {{user.name}} - {{user.gender}} - {{user.age}}
+</li>
+```
+
+##### 7.3 v-else的使用
+
+```
+    <h1 v-if="Math.random() > 0.5">
+        看到我啦？！if
+    </h1>
+    <h1 v-else>
+        看到我啦？！else
+    </h1>
+```
+
+##### 7.4 v-else-if
+
+```
+    <h1 v-if="random >= 0.75">
+        看到我啦？！if
+    </h1>
+    <h1 v-else-if="random > 0.25">
+        看到我啦？！if 0.25
+    </h1>
+    <h1 v-else>
+        看到我啦？！else
+    </h1>
 ```
 
