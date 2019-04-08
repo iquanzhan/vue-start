@@ -308,3 +308,89 @@ var app = new Vue({
         });
 ```
 
+#### 11.组件化
+
+##### 11.1 全局组件
+
+```
+        Vue.component("counter", {
+            template: '<button v-on:click="count++">你点了我 {{ count }} 次，我记住了.</button>',
+            data() {
+                return {
+                    count: 0
+                }
+            }
+        });
+```
+
+```
+<counter></counter>
+```
+
+##### 11.2局部组件
+
+```
+const counterpart = {
+            template: '<button v-on:click="count++">你点了我 {{ count }} 次，我记住了.</button>',
+            data() {
+                return {
+                    count: 0
+                }
+            }
+        };
+```
+
+```
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: ''
+            },
+            components: {
+                counterpart: counterpart
+            }
+        });
+```
+
+#### 12.组件通信
+
+##### 12.1父到子通信
+
+```
+<introduce name="张三" />
+```
+
+```
+Vue.component("introduce", {
+            template: '<div>大家好，我是：{{name}}</div>',
+            props: ['name']
+        });
+
+        var app = new Vue({
+            el: '#app'
+        });
+```
+
+##### 12.2 props验证
+
+```
+const myList = {
+        template: '\
+        <ul>\
+        	<li v-for="item in items" :key="item.id">{{item.id}} : {{item.name}}</li>\
+        </ul>\
+        ',
+        props: {
+            items: {
+                type: Array,
+                default: [],
+                required: true
+            }
+        }
+    };
+```
+
+type类型，可以有：
+
+> String、Number、Boolean、Array、Object、Date、Function、Symbol
+
