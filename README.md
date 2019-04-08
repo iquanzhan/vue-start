@@ -194,3 +194,23 @@ v-on:click='add'`可以简写为`@click='add'`
 v-for="(value,key,index) in object"
 ```
 
+##### :key的使用
+
+```
+<li v-for="(item,index) in items" :key=index></li>
+```
+
+#### 7.v-if、v-show
+
+```
+<button v-on:click="show=!show">
+	显示
+</button>
+<span v-if="show">
+	文本内容
+</span>
+<span v-show="show">
+	文本内容
+</span>
+```
+

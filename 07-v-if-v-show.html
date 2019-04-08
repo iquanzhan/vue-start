@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+
+        <button v-on:click="show=!show">
+            显示
+        </button>
+        <span v-if="show">
+            文本内容
+        </span>
+        <span v-show="show">
+            文本内容
+        </span>
+    </div>
+
+
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                show: false
+            },
+            methods: {}
+        });
+    </script>
+</body>
+
+</html>
