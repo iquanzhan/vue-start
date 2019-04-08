@@ -251,3 +251,60 @@ v-for="(value,key,index) in object"
     </h1>
 ```
 
+#### 8.v-bind
+
+```
+<div v-bind:class="{ active: isActive }"></div>
+```
+
+active存在与否，取决于isActive是否为true
+
+##### style样式的绑定
+
+```
+<div v-bind:style="[baseStyles, overridingStyles]"></div>
+```
+
+会共同使用baseStyles, overridingStyles两个样式
+
+#### 9.计算属性
+
+```
+<div>{{birth}}</div>
+```
+
+```
+var app = new Vue({
+            el: '#app',
+            data: {
+                birthday: 1429032123201
+            },
+            computed: {
+                birth() {
+                    const date = new Date(this.birthday);
+                    return date.getFullYear() + "-" + date.getMonth() + "-" + date.getDay();
+                }
+            }
+        });
+```
+
+#### 10.watch
+
+```
+<input type="text" v-model="message" />
+```
+
+```
+var app = new Vue({
+            el: '#app',
+            data: {
+                message: ''
+            },
+            watch: {
+                message(newValue, oldValue) {
+                    console.log(newValue + "----" + oldValue);
+                }
+            }
+        });
+```
+
