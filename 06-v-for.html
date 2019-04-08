@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="user in users">
+                {{user.id}} - {{user.name}}
+            </li>
+        </ul>
+    </div>
+
+
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                users: [{
+                        id: 0,
+                        name: '张三1'
+                    },
+                    {
+                        id: 1,
+                        name: '张三2'
+                    },
+                    {
+                        id: 2,
+                        name: '张三3'
+                    },
+                    {
+                        id: 3,
+                        name: '张三4'
+                    },
+                    {
+                        id: 4,
+                        name: '张三5'
+                    },
+                    {
+                        id: 5,
+                        name: '张三6'
+                    },
+                    {
+                        id: 6,
+                        name: '张三7'
+                    }
+                ]
+            },
+            methods: {}
+        });
+    </script>
+
+</body>
+
+</html>
