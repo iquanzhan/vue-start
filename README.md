@@ -394,3 +394,9 @@ type类型，可以有：
 
 > String、Number、Boolean、Array、Object、Date、Function、Symbol
 
+##### 12.3 动态参数传递
+
+```
+<introduce :name="title" /></introduce>
+```
+

@@ -10,7 +10,9 @@
 
 <body>
     <div id="app">
-        <introduce name="张三" />
+        <introduce name="张三" ></introduce>
+
+        <introduce :name="title" /></introduce>
     </div>
 
     <script src="./node_modules/vue/dist/vue.js"></script>
@@ -21,7 +23,10 @@
         });
 
         var app = new Vue({
-            el: '#app'
+            el: '#app',
+            data: {
+                title: '123456'
+            }
         });
     </script>
 </body>
