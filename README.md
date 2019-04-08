@@ -104,3 +104,69 @@ var app = new Vue({
 
 #### 4.v-on基本用法
 
+```
+<button v-on:click="add">+</button>
+<button v-on:click="decrement">-</button>
+```
+
+```
+ var app = new Vue({
+            el: '#app',
+            data: {
+                number: 0
+            },
+            methods: {
+                add() {
+                    this.number++;
+                },
+                decrement() {
+                    this.number--;
+                }
+            }
+        });
+```
+
+v-on:click='add'`可以简写为`@click='add'`
+
+#### 5.事件修饰符、按键修饰符
+
+##### 5.1 事件修饰符
+
+```
+<button @click.once="add">+</button>
+```
+
+##### 5.2 按键修饰符
+
+```
+<input @keyup.enter="add" />
+```
+
+全部的按键别名：
+
+- `.enter`
+- `.tab`
+- `.delete` (捕获“删除”和“退格”键)
+- `.esc`
+- `.space`
+- `.up`
+- `.down`
+- `.left`
+- `.right
+
+##### 5.3 组合按钮
+
+可以用如下修饰符来实现仅在按下相应按键时才触发鼠标或键盘事件的监听器。
+
+- `.ctrl`
+- `.alt`
+- `.shift`
+
+```html
+
+<!-- Ctrl + Click -->
+<div @click.ctrl="doSomething">Do something</div>
+```
+
+#### 6.v-for
+
