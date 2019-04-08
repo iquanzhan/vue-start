@@ -36,7 +36,7 @@ npm install vue --save
 
 #### 1.数据和方法的定义
 
-```
+```js
  var doubleApp = new Vue({
             el: '#doubleApp',
             data: {
@@ -48,6 +48,11 @@ npm install vue --save
                 }    
             }
         })
+```
+使用：
+```
+<input type="number" v-model="number" />
+<button  v-on:click="add">+</button>
 ```
 
 #### 2.生命周期函数
@@ -93,6 +98,9 @@ var app = new Vue({
 ```
 <span v-text="text"></span>
 <span v-html="html"></span>
+
+//其中text、html为model数据
 ```
 
-4.
+#### 4.v-on基本用法
+
