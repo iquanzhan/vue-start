@@ -170,13 +170,27 @@ v-on:click='add'`可以简写为`@click='add'`
 
 #### 6.v-for
 
-基本用法
+##### 6.1 基本用法
 
 ```
 <ul>
     <li v-for="user in users">
-    {{user.id}} - {{user.name}}
+    	{{user.id}} - {{user.name}}
     </li>
 </ul>
+```
+
+##### 6.2 index索引
+
+```
+<li v-for="(user,index) in users">
+	{{index}} - {{user.id}} - {{user.name}}
+</li>
+```
+
+##### 6.3 遍历对象
+
+```
+v-for="(value,key,index) in object"
 ```
 

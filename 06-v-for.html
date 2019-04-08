@@ -11,8 +11,14 @@
 <body>
     <div id="app">
         <ul>
-            <li v-for="user in users">
-                {{user.id}} - {{user.name}}
+            <li v-for="(user,index) in users">
+                {{index}} - {{user.id}} - {{user.name}}
+            </li>
+        </ul>
+
+        <ul>
+            <li v-for="(value,key,index) in user">
+                {{index}} - {{key}} - {{value}}
             </li>
         </ul>
     </div>
@@ -51,7 +57,11 @@
                         id: 6,
                         name: '张三7'
                     }
-                ]
+                ],
+                user: {
+                    id: 0,
+                    name: '李四'
+                }
             },
             methods: {}
         });
